@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #101820;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin: 20px 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #00f2fe;
+  text-shadow: 1px 1px 2px #000;
+}
+
+#mode-select-form {
+  background-color: #1c1c1c;
+  padding: 15px 25px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+label {
+  margin: 0 10px;
+  font-size: 1rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+}
+
+
+.cell {
+  width: 100px;
+  height: 100px;
+  font-size: 2.5rem;
+  background-color: #ffffff20;
+  border: 2px solid #00f2fe;
+  color: #00f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.cell:hover {
+  transform: scale(1.1);
+  background-color: #00f2fe30;
+}
+
+.cell.pop {
+  animation: pop 0.4s ease-in-out forwards;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); background-color: #00f2fe80; }
+}
+
+#message {
+  margin: 20px 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #00f2fe;
+  border: none;
+  color: #000;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #00d3dd;
+}
+
+footer {
+  margin-top: auto;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  background: #1c1c1c;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  #mode-select-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  label.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .board {
+    grid-template-columns: repeat(3, 70px);
+    grid-template-rows: repeat(3, 70px);
+  }
+
+  .cell {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+}
